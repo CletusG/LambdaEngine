@@ -1,3 +1,5 @@
+#pragma once
+
 // I need to make a precompiled header for this
 #include <iostream>
 
