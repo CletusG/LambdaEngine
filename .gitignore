@@ -1,4 +1,0 @@
-#Ignore these directories:
-bin/LambdaEngine/*
-bin/DemoApplication/*
-.vscode/
