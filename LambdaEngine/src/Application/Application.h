@@ -7,11 +7,12 @@ namespace Lambda {
             Application();
             virtual ~Application();
 
-            void Update();
+            void Run();
+
+            virtual void Start() = 0;
+            virtual void Update() = 0;
         private:
-            void Start();
-            
-            bool m_IsRunning = false;
+            bool m_IsRunning = true;
     };
 
     //Define in client
