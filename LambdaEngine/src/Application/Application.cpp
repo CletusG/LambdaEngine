@@ -1,15 +1,19 @@
 #include "Application.h"
-#include "Logging/Logging.h"
 
 namespace Lambda {
        
-    Application::Application() {
-        Logger::IntlMSG("Starting Up");
-    }
+    Application::Application() {}
     Application::~Application() {}
 
-    void Application::Run() {
+    void Application::Start() {
+        m_IsRunning = true;
+    }
+
+    void Application::Update() {
         Start();
-        Update();
+        
+        while(m_IsRunning) {
+            //
+        }
     }
 }
