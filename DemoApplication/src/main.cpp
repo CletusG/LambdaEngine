@@ -10,7 +10,6 @@ class Demo : public Application {
         void Start() override {
             Logger::MSG("Starting up");
             Logger::WARN("Sector C science personnel, report to Anomalous Materials test laboratory.");
-            Logger::ERROR("Biohazard warning in Sector B and C");
         }
 
         void Update() override {}
