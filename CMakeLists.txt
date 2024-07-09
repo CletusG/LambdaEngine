@@ -19,3 +19,6 @@ target_link_libraries(${PROJECT_NAME} glfw)
 include_directories(
         "${CMAKE_SOURCE_DIR}/LambdaEngine/src"
 )
+
+# Precompiled header
+target_precompile_headers(LambdaEngine PRIVATE ${CMAKE_SOURCE_DIR}/LambdaEngine/src/pch.h)

@@ -1,5 +1,6 @@
+#include "pch.h"
 #include "Application.h"
-#include <Logging/Logger.h>
+#include "Logging/Logger.h"
 
 namespace Lambda {
     

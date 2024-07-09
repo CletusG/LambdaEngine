@@ -1,14 +1,12 @@
 #pragma once
 
-// I need to make a precompiled header for this
-#include <iostream>
-#include <string>
-#include <sstream>
-
 /*Logger will be a fairly simple group of functions that
 just outputs what I enter but with more detailed notation
 and colors matching warning severity. I should add definitions
 to disable internal logs in client applications*/
+
+//Need to leave this for now
+#include <string>
 
 namespace Lambda {
     namespace Logger {        
