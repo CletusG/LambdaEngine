@@ -19,8 +19,8 @@ namespace Lambda {
     }
 
     namespace UNXColorString {
-        std::string GREEN(std::string msg);
-        std::string RED(std::string msg);
-        std::string YELLOW(std::string msg);
+        std::string GREEN(const std::string& msg);
+        std::string RED(const std::string& msg);
+        std::string YELLOW(const std::string& msg);
     }
 }

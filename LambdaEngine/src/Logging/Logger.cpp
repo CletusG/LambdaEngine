@@ -31,17 +31,17 @@ namespace Lambda {
       std::cout << UNXColorString::YELLOW(oss.str()) << std::endl; }
 
    //Colors
-   std::string UNXColorString::GREEN(std::string msg) { 
+   std::string UNXColorString::GREEN(const std::string& msg) { 
       std::ostringstream oss; 
       oss << "\033[32m" << msg << "\033[0m"; 
       return oss.str(); }
 
-   std::string UNXColorString::RED(std::string msg) { 
+   std::string UNXColorString::RED(const std::string& msg) { 
       std::ostringstream oss; 
       oss << "\033[31m" << msg << "\033[0m"; 
       return oss.str(); } 
         
-   std::string UNXColorString::YELLOW(std::string msg) { 
+   std::string UNXColorString::YELLOW(const std::string& msg) { 
       std::ostringstream oss; 
       oss << "\033[33m" << msg << "\033[0m"; 
       return oss.str(); }
