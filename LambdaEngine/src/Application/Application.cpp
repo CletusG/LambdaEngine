@@ -1,23 +1,23 @@
 #include "pch.h"
 #include "Application.h"
 
-#include "Logging/Logger.h"
-#include "OpenGL/Context.h"
-
 namespace Lambda {
     
-    Application::Application() {
+    lApplication::lApplication() {
         Logger::IntlMSG("=======================");
         Logger::IntlMSG("Starting");
 
-        Context::Initialize();
-        Logger::IntlMSG("OpenGL Initialized");
+        m_lWindow = new lWindow("Lambda Window", 800, 600);        
     }
-    Application::~Application() {}
+    lApplication::~lApplication() {}
 
-    void Application::Run() {
+    void lApplication::Run() {
         Start();
-        Update();
+
+        while (!glfwWindowShouldClose(m_lWindow->GetWindow())) {
+            m_lWindow->Run();
+            Update();
+        }
     }
 
 }

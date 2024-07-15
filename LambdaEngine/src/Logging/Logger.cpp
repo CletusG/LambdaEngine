@@ -1,9 +1,9 @@
 #include "pch.h"
-#include "Logger.h"
+//#include "Logger.h" - Already in precompiled header
 
 namespace Lambda {
   
-  //Logging functions
+  // Logging functions
    void Logger::IntlMSG(const char* msg) {
       std::cout << "ENGINE: " << msg << std::endl; }
 
@@ -30,7 +30,7 @@ namespace Lambda {
       oss << "APPLICATION: " << msg;
       std::cout << UNXColorString::YELLOW(oss.str()) << std::endl; }
 
-   //Colors
+   // Colors
    std::string UNXColorString::GREEN(const std::string& msg) { 
       std::ostringstream oss; 
       oss << "\033[32m" << msg << "\033[0m"; 

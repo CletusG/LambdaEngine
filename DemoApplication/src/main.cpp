@@ -2,7 +2,7 @@
 
 using namespace Lambda;
 
-class Demo : public Application {
+class Demo : public lApplication {
     public:
         Demo() {};
         ~Demo() {};
@@ -15,6 +15,6 @@ class Demo : public Application {
         void Update() override {}
 };
 
-Lambda::Application* Lambda::CreateApplication() {
+Lambda::lApplication* Lambda::CreatelApplication() {
     return new Demo();
 }

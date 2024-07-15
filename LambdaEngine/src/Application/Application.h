@@ -1,11 +1,13 @@
 #pragma once
 
+#include "OpenGL/Window.h"
+
 namespace Lambda {
     
-    class Application {
+    class lApplication {
         public:
-            Application();
-            virtual ~Application();
+            lApplication();
+            virtual ~lApplication();
 
             void Run();
 
@@ -13,8 +15,10 @@ namespace Lambda {
             virtual void Update() = 0;
         private:
             bool m_IsRunning = true;
+
+            lWindow* m_lWindow = nullptr;
     };
 
     //Define in client
-    Application* CreateApplication();
+    lApplication* CreatelApplication();
 }

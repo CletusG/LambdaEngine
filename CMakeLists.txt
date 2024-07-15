@@ -5,9 +5,11 @@ file(GLOB_RECURSE lambda_src
     ${CMAKE_SOURCE_DIR}/LambdaEngine/src/*.cpp)
 file(GLOB_RECURSE lambda_headers
     ${CMAKE_SOURCE_DIR}/LambdaEngine/src/*.h)
-add_library(LambdaEngine STATIC ${lambda_src} ${lambda_headers})
+add_library(LambdaEngine STATIC ${lambda_src} ${lambda_headers} ${CMAKE_SOURCE_DIR}/LambdaEngine/src/glad.c)
+include_directories("${CMAKE_SOURCE_DIR}/LambdaEngine/src"
+    "${CMAKE_SOURCE_DIR}/LambdaEngine/include")
 target_link_libraries(LambdaEngine glfw)
-target_precompile_headers(LambdaEngine PRIVATE ${CMAKE_SOURCE_DIR}/LambdaEngine/src/pch.h)
+target_precompile_headers(LambdaEngine INTERFACE ${CMAKE_SOURCE_DIR}/LambdaEngine/src/pch.h)
 
 project(DemoApplication)
 file(GLOB_RECURSE application_src
