@@ -4,4 +4,4 @@
 #include "Logging/Logger.h"
 
 //Entry point
-#include "main.h"
+#include "main/main.h"

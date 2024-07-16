@@ -1,6 +1,6 @@
 #pragma once
 
-#include "OpenGL/Window.h"
+#include "Window/Window.h"
 
 namespace Lambda {
     
