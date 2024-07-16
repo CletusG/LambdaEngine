@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Window.h"
 
+#include "callback/FramebufferResize.h"
+
 namespace Lambda {
     
     lWindow::lWindow(const char* name, int width, int height ) {   
@@ -28,5 +30,10 @@ namespace Lambda {
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT);
         glfwSwapBuffers(m_Window);
+    }
+
+    void lWindow::SetFramebufferResizeCallback()
+    {
+        glfwSetFramebufferSizeCallback(m_Window, EventManager::GetFramebufferCallbackFunc());
     }
 }

@@ -13,6 +13,8 @@ namespace Lambda {
         void Run();
 
         inline GLFWwindow* GetWindow() { return m_Window;}
+
+        void SetFramebufferResizeCallback();
     private:
         GLFWwindow* m_Window;
     };
