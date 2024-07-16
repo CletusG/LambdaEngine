@@ -7,7 +7,7 @@ Lambda-engine is a solo game engine project I am designing mostly for fun and al
 
 
 ## About/How to navigate
-Lambda-engine is a game engine built as a static library written in C++ that is meant to be built into a target application (the game). All the source code for the engine can be found under the [engine](https://github.com/CletusG/lambda-engine/tree/master/engine) folder. In the [test](https://github.com/GavinAlligood/lambda-engine/tree/master/tests/) folder, there are/will be various examples of projects created using Lambda engine.  
+Lambda-engine is a game engine built as a static library written in C++ that is meant to be built into a target application (the game). All the source code for the engine can be found under the [engine](https://github.com/CletusG/lambda-engine/tree/master/engine) folder. In the [tests](https://github.com/GavinAlligood/lambda-engine/tree/master/tests/) folder, there are/will be various examples of projects created using Lambda engine.  
 
 Note about the style of Lambda classes: I prefix each class that belongs to Lambda with a lowercase L because in VSCode, it looks similar to the greek symbol lambda
 
@@ -31,6 +31,7 @@ Here are some great resources I've used to learn more about writing game engines
  - [LearnOpenGL by Joey de Vries](https://learnopengl.com/About)
  - [TheCherno (Yan Chernikov) on YouTube](https://www.youtube.com/@TheCherno/playlists)
  - [C++ Game Development 2 by Suraj Sharma on YouTube](https://www.youtube.com/watch?v=3pLmPXzb31s&list=PL6xSOsbVA1eY06RyJuIVWc6tP8hIDiId8)
+
 Other Engines:
  - [Hazel](https://github.com/TheCherno/Hazel)
  - [Godot](https://github.com/godotengine/godot)
