@@ -1,6 +1,7 @@
 #pragma once
 
 #include "window/Window.h"
+#include "input/InputManager.h"
 
 namespace Lambda {
     
@@ -17,6 +18,7 @@ namespace Lambda {
             bool m_IsRunning = true;
 
             lWindow* m_lWindow = nullptr;
+            lInputManager* m_lInputManager = nullptr;
     };
 
     //Define in client

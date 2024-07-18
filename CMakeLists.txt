@@ -18,7 +18,9 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/main/main.h
     ${CMAKE_SOURCE_DIR}/engine/window/Window.cpp
     ${CMAKE_SOURCE_DIR}/engine/window/Window.h
-    ${CMAKE_SOURCE_DIR}/engine/Lambda.h)
+    ${CMAKE_SOURCE_DIR}/engine/Lambda.h
+    ${CMAKE_SOURCE_DIR}/engine/input/keycodes.h
+    ${CMAKE_SOURCE_DIR}/engine/input/mousecodes.h)
 
 # Include
 include_directories(
