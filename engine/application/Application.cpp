@@ -7,7 +7,7 @@ namespace Lambda {
         Logger::IntlMSG("=======================");
         Logger::IntlMSG("Starting");
 
-        m_lWindow = new lWindow("Lambda Window", 800, 600);        
+        m_lWindow = new lWindow("Lambda Window", 800, 600);
     }
     lApplication::~lApplication() {}
 
