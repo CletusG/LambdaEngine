@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAMBDA_INPUTMANAGER_H
+#define LAMBDA_INPUTMANAGER_H
 
 #include "window/Window.h"
 #include "keycodes.h"
@@ -21,3 +22,5 @@ namespace Lambda {
         lWindow& m_lWindow;
     };
 }
+
+#endif

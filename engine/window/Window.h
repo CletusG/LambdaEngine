@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAMBDA_WINDOW_H
+#define LAMBDA_WINDOW_H
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
@@ -19,3 +20,5 @@ namespace Lambda {
         GLFWwindow* m_Window;
     };
 }
+
+#endif

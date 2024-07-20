@@ -33,6 +33,9 @@ target_link_libraries(lambda-engine glfw)
 # Pre-compiled header
 target_precompile_headers(lambda-engine INTERFACE ${CMAKE_SOURCE_DIR}/engine/pch.h)
 
+# Macro definition
+add_compile_definitions(LAMBDA_PLATFORM_LINUX)
+
 
 
 ### Set up a demo application (will be removed/moved) ###
@@ -48,3 +51,6 @@ include_directories(
 
 # Linker
 target_link_libraries(DemoApplication lambda-engine)
+
+# Macro definitions
+target_compile_definitions(DemoApplication PUBLIC LAMBDA_APP)

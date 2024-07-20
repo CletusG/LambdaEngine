@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAMBDA_APPLICATION_H
+#define LAMBDA_APPLICATION_H
 
 #include "window/Window.h"
 #include "input/InputManager.h"
@@ -24,3 +25,5 @@ namespace Lambda {
     //Define in client
     lApplication* CreatelApplication();
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAMBDA_MOUSECODES_H
+#define LAMBDA_MOUSECODES_H
 
 typedef int lButton;
 
@@ -11,3 +12,5 @@ typedef int lButton;
 #define LMOUSE_BUTTON_6         5
 #define LMOUSE_BUTTON_7         6
 #define LMOUSE_BUTTON_8         7
+
+#endif

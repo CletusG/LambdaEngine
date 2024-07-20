@@ -6,7 +6,7 @@ namespace Lambda {
     lApplication::lApplication() {
         Logger::IntlMSG("=======================");
         Logger::IntlMSG("Starting");
-
+        
         m_lWindow = new lWindow("Lambda Window", 800, 600);
         m_lInputManager = new lInputManager(*m_lWindow);
     }

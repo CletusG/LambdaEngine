@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAMBDA_KEYCODES_H
+#define LAMBDA_KEYCODES_H
 
 typedef int lKey;
 
@@ -96,3 +97,5 @@ typedef int lKey;
 #define LKEY_F23                312
 #define LKEY_F24                313
 #define LKEY_F25                314
+
+#endif
