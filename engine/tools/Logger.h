@@ -1,12 +1,8 @@
 #ifndef LAMBDA_LOGGER_H
 #define LAMBDA_LOGGER_H
 
-/*Logger will be a fairly simple group of functions that
-just outputs what I enter but with more detailed notation
-and colors matching warning severity. I should add definitions
-to disable internal logs in client applications*/
+/*Logger will eventually turn into a full console app*/
 
-//Need to leave this for now
 #include <string>
 
 namespace Lambda {
@@ -16,6 +12,10 @@ namespace Lambda {
         void IntlMSG(const char* msg);
         void IntlERROR(const char* msg);
         void IntlWARN(const char* msg);
+
+        void IntlMSG(std::string& msg);
+        void IntlError(std::string& msg);
+        void IntlWARN(std::string& msg);
 #endif
         void MSG(const char* msg);
         void ERROR(const char* msg);

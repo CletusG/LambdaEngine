@@ -1,0 +1,89 @@
+#include "pch.h"
+#include "Shader.h"
+
+#include "tools/Filesystem.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+
+namespace Lambda {
+
+    lShader::~lShader() {
+        glDeleteProgram(m_ID);
+    }
+
+    void lShader::Use() {
+        glUseProgram(m_ID);
+    }
+
+    /* The reason this function is called seperate instead of just putting this code in the constructor
+    is so I can initialize OpenGL in the correct order inside l2DRenderer*/
+    void lShader::Init(const char* vertexShaderFilepath, const char* fragmentShaderFilepath) {  
+        
+        
+        // Create vertex shader
+        m_glVertexShader = glCreateShader(GL_VERTEX_SHADER);
+        
+        // It seems that this conversion somehow corrupts the data in the const char*, 
+        // so for now I will leave this as is
+        //const char* vstest_char = Filesystem::ReadFile(shaderpath).c_str();
+        std::string vs = Filesystem::ReadFile(vertexShaderFilepath);
+        const char* vs_char = vs.c_str();
+
+        glShaderSource(m_glVertexShader, 1, &vs_char, NULL);
+
+        glCompileShader(m_glVertexShader);
+        
+        if (!CompilationErrorCheck(m_glVertexShader)) {
+            Logger::IntlERROR("Failed to load vertex shader!");
+            Logger::IntlERROR(GetErrorLog(m_glVertexShader));
+        }
+
+
+        // Create fragment shader
+        m_glFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+        
+        std::string fs = Filesystem::ReadFile(fragmentShaderFilepath);
+        const char* fs_char = fs.c_str();
+        
+        glShaderSource(m_glFragmentShader, 1, &fs_char, NULL);
+
+        glCompileShader(m_glFragmentShader);
+        
+        if (!CompilationErrorCheck(m_glFragmentShader)) {
+            Logger::IntlERROR("Failed to load fragment shader!");
+            Logger::IntlERROR(GetErrorLog(m_glFragmentShader));
+        }
+
+
+        // Create shader program
+        m_ID = glCreateProgram();
+        glAttachShader(m_ID, m_glVertexShader);
+        glAttachShader(m_ID, m_glFragmentShader);
+        glLinkProgram(m_ID);
+        // TODO: Error check
+        
+        // Delete shaders
+        glDeleteShader(m_glVertexShader);
+        glDeleteShader(m_glFragmentShader);
+    }
+
+    bool lShader::CompilationErrorCheck(lglShader shader) {
+        int l_status;
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &l_status);
+        
+        // If compilation failed
+        if (!l_status) {
+            return false;   
+        } else {
+            return true;
+        }
+    }
+
+    const char* lShader::GetErrorLog(lglShader shader) {
+        char* l_infoLog;
+        glGetShaderInfoLog(shader, 512, NULL, l_infoLog);
+        
+        return l_infoLog; // Don't return a local var, I will fix this
+    }
+}

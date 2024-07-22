@@ -1,7 +1,9 @@
 //Pre-compiled header includes
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <string>
 #include <functional>
+#include <map>
 
-#include "logger/Logger.h"
+#include "tools/Logger.h"

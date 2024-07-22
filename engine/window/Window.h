@@ -14,10 +14,11 @@ namespace Lambda {
         void Run();
 
         inline GLFWwindow* GetWindow() { return m_Window;}
-
-        void SetFramebufferResizeCallback();
     private:
         GLFWwindow* m_Window;
+
+        // I will do window events later
+        //void m_FramebufferResizeCallback(GLFWwindow* window, int width, int height);
     };
 }
 

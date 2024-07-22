@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Window.h"
 
-#include "callback/FramebufferResize.h"
-
 namespace Lambda {
     
     lWindow::lWindow(const char* name, int width, int height ) {   
@@ -17,9 +15,11 @@ namespace Lambda {
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
           Logger::IntlERROR("Failed to initialize GLAD!");
         }
-        
-        // I will add changeable colors once I add glm to the project
-        glClearColor(0.25f, 0.5f, 0.85f, 0.5f);
+
+        glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
+        {
+            glViewport(0,0, width, height);
+        });
     }
 
     lWindow::~lWindow() {
@@ -28,12 +28,6 @@ namespace Lambda {
     
     void lWindow::Run() {
         glfwPollEvents();
-        glClear(GL_COLOR_BUFFER_BIT);
         glfwSwapBuffers(m_Window);
-    }
-
-    void lWindow::SetFramebufferResizeCallback()
-    {
-        glfwSetFramebufferSizeCallback(m_Window, EventManager::GetFramebufferCallbackFunc());
     }
 }

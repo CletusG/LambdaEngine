@@ -22,7 +22,7 @@ namespace Lambda {
             lInputManager* m_lInputManager = nullptr;
     };
 
-    //Define in client
+    // Defined in client
     lApplication* CreatelApplication();
 }
 

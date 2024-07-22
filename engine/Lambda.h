@@ -1,11 +1,10 @@
 #ifndef LAMBDA_H
 #define LAMBDA_H
 
+#include "tools/Logger.h"
+#include "tools/Filesystem.h"
 
 #include "application/Application.h"
-#include "logger/Logger.h"
-
-//Entry point
 #include "main/main.h"
 
 
