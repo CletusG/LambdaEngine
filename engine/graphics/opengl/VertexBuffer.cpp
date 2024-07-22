@@ -6,20 +6,27 @@
 
 namespace Lambda {
     
+    lVertexBuffer::lVertexBuffer() {
+        glGenBuffers(1, &m_ID);
+    }
+
     lVertexBuffer::~lVertexBuffer() {
         glDeleteBuffers(1, &m_ID);
     }
 
-    void lVertexBuffer::Generate() {
-        glGenBuffers(1, &m_ID);
-    }
-
     void lVertexBuffer::Bind() {
         glBindBuffer(GL_ARRAY_BUFFER, m_ID);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(m_Vertices), m_Vertices, GL_STATIC_DRAW);
     }
 
     void lVertexBuffer::Unbind() {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+    }
+
+    void lVertexBuffer::CopyData() {
+        glBufferData(
+            GL_ARRAY_BUFFER, 
+            sizeof(m_SquareVertices), 
+            m_SquareVertices, 
+            GL_STATIC_DRAW);
     }
 }

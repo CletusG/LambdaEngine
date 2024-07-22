@@ -5,6 +5,8 @@
 #include "keycodes.h"
 #include "mousecodes.h"
 
+// I might make this static eventually
+
 namespace Lambda {
 
     class lInputManager {

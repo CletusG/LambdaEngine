@@ -7,24 +7,27 @@ namespace Lambda {
     
     class lVertexBuffer : public lglObject {
     public:
-        lVertexBuffer() {};
+        lVertexBuffer();
         ~lVertexBuffer();
-
-        /* The generate function is seperate for the sake of code readability/clarity 
-        when initializing OpenGL through l2DRenderer (see also lVertexArray)*/
-        void Generate();
 
         void Bind();
         void Unbind();
-
-        float* GetVertices() { return m_Vertices; }
+        void CopyData();
     private:
         
         // Demo triangle vertices
-        float m_Vertices[9] = {
+        float m_TriangleVertices[9] = {
             -0.5f, -0.5f, 0.0f,
             0.5f, -0.5f, 0.0f,
             0.0f, 0.5f, 0.0f
+        };
+
+        // Demo square vertices
+        float m_SquareVertices[12] = {
+            0.5f, 0.5f, 0.0f,
+            0.5f, -0.5f, 0.0f,
+            -0.5f, -0.5f, 0.0f,
+            -0.5f, 0.5f, 0.0f
         };
 
     };

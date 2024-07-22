@@ -6,12 +6,12 @@
 
 namespace Lambda {
 
-    lVertexArray::~lVertexArray() {
-        glDeleteVertexArrays(1, &m_ID);
+    lVertexArray::lVertexArray() {
+        glGenVertexArrays(1, &m_ID);
     }
 
-    void lVertexArray::Generate() {
-        glGenVertexArrays(1, &m_ID);
+    lVertexArray::~lVertexArray() {
+        glDeleteVertexArrays(1, &m_ID);
     }
 
     void lVertexArray::Bind() {

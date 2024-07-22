@@ -7,12 +7,8 @@ namespace Lambda {
 
     class lVertexArray : public lglObject {
     public:
-        lVertexArray() {};
+        lVertexArray();
         ~lVertexArray();
-
-        /* The generate function is seperate for the sake of code readability/clarity 
-        when initializing OpenGL through l2DRenderer (see also lVertexBuffer)*/
-        void Generate();
 
         void Bind();
         void Unbind();

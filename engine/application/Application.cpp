@@ -31,8 +31,9 @@ namespace Lambda {
 
             l_2DRenderer.ClearColor();
             // Render
-            l_2DRenderer.DrawTriangle();
-
+            //l_2DRenderer.DrawTriangle();
+            l_2DRenderer.DrawSquare();
+            
             m_lWindow->Run();
 
             Update();

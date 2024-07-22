@@ -1,10 +1,7 @@
 #ifndef LAMBDA_2DRENDERER_H
 #define LAMBDA_2DRENDERER_H
 
-// lglObjects
-#include "graphics/opengl/VertexBuffer.h"
 #include "graphics/opengl/VertexArray.h"
-#include "graphics/opengl/glObject.h"
 #include "graphics/opengl/Shader.h"
 
 namespace Lambda {
@@ -15,6 +12,7 @@ namespace Lambda {
         ~l2DRenderer();
 
         void DrawTriangle();
+        void DrawSquare();
 
         void ClearColor();
 
