@@ -3,6 +3,7 @@
 
 #include "graphics/opengl/VertexArray.h"
 #include "graphics/opengl/Shader.h"
+#include "graphics/opengl/Texture.h"
 
 namespace Lambda {
 
@@ -16,12 +17,14 @@ namespace Lambda {
 
         void ClearColor();
 
-        //void NewVertexAttribute();
-
         //inline static lVertexBuffer* NewVertexBuffer() { return new lVertexBuffer(); }
     private:
+        // I need a better solution than this
         lShader* m_glShaders;
         lVertexArray* m_glVertexArray;
+        
+        void SetVertexAttribute(unsigned int location, unsigned int size, 
+            unsigned long stride, unsigned long offset);
     };
 
 }

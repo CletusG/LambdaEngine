@@ -23,6 +23,7 @@ namespace Lambda {
     }
 
     lWindow::~lWindow() {
+        glfwDestroyWindow(m_Window);
         glfwTerminate();
     }
     

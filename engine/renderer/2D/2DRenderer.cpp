@@ -22,7 +22,7 @@ namespace Lambda {
         // Generate OpenGL objects
         lVertexBuffer l_glVertexBuffer;
         lElementBuffer l_glElementBuffer;
-        //Vertex Array generated in constructor
+        // Vertex Array generated in constructor
 
         // Bind Vertex Array now so the following buffer objects created are stored in the vertex array
         m_glVertexArray->Bind();
@@ -33,8 +33,8 @@ namespace Lambda {
         l_glElementBuffer.Bind();
         l_glElementBuffer.CopyData();
 
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);
+        SetVertexAttribute(0, 3, 5 * sizeof(float), 0);
+        SetVertexAttribute(1, 2, 5 * sizeof(float), 3 * sizeof(float));
 
         m_glVertexArray->Unbind();
         l_glVertexBuffer.Unbind();
@@ -42,13 +42,17 @@ namespace Lambda {
     }
 
     l2DRenderer::~l2DRenderer() {
+        delete m_glShaders;
+        delete m_glVertexArray;
     }
 
     void l2DRenderer::DrawTriangle() {
         m_glShaders->Use();
         m_glVertexArray->Bind();
-        
+
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
+        m_glVertexArray->Unbind();
     }
 
     void l2DRenderer::DrawSquare() {
@@ -63,5 +67,13 @@ namespace Lambda {
     void l2DRenderer::ClearColor() {
         glClearColor(0.25f, 0.5f, 0.85f, 0.5f);
         glClear(GL_COLOR_BUFFER_BIT);
+    }
+
+    void l2DRenderer::SetVertexAttribute(unsigned int location, unsigned int size,
+        unsigned long stride, unsigned long offset) {
+        
+        // Call after correct vertex buffer is bound
+        glVertexAttribPointer(location, size, GL_FLOAT, GL_FALSE, stride, (void*)offset);
+        glEnableVertexAttribArray(location);
     }
 }

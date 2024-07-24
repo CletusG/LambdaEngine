@@ -16,18 +16,20 @@ namespace Lambda {
     private:
         
         // Demo triangle vertices
-        float m_TriangleVertices[9] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+        // Pos 0 = vertex position data
+        // Pos 1 = vertex color data
+        float m_TriangleVertices[18] = {
+            -0.5f, -0.5f, 0.0f,    1.0f, 0.0f, 0.0f,
+            0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f,
+            0.0f, 0.5f, 0.0f,      0.0f, 0.0f, 1.0f
         };
 
         // Demo square vertices
-        float m_SquareVertices[12] = {
-            0.5f, 0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            -0.5f, -0.5f, 0.0f,
-            -0.5f, 0.5f, 0.0f
+        float m_SquareVertices[20] = {
+            0.5, 0.5f, 0.0f,     1.0f, 1.0f,
+            0.5f, -0.5f, 0.0f,    1.0f, 0.0f,
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,
+            -0.5f, 0.5f, 0.0f,     0.0f, 1.0f
         };
 
     };

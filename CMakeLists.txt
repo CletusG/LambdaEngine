@@ -18,11 +18,14 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/VertexArray.h
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/VertexBuffer.cpp
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/VertexBuffer.h
+    ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/Texture.cpp
+    ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/Texture.h
     ${CMAKE_SOURCE_DIR}/engine/input/InputManager.cpp
     ${CMAKE_SOURCE_DIR}/engine/input/InputManager.h
     ${CMAKE_SOURCE_DIR}/engine/input/keycodes.h
     ${CMAKE_SOURCE_DIR}/engine/input/mousecodes.h
     ${CMAKE_SOURCE_DIR}/engine/main/main.h
+    ${CMAKE_SOURCE_DIR}/engine/math/Vector.h
     ${CMAKE_SOURCE_DIR}/engine/renderer/2D/2DRenderer.cpp
     ${CMAKE_SOURCE_DIR}/engine/renderer/2D/2DRenderer.h
     ${CMAKE_SOURCE_DIR}/engine/tools/Logger.cpp
@@ -30,6 +33,7 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/shaders/vertex.vs
     ${CMAKE_SOURCE_DIR}/engine/shaders/fragment.fs
     ${CMAKE_SOURCE_DIR}/engine/thirdparty/GLAD/glad.c
+    ${CMAKE_SOURCE_DIR}/engine/thirdparty/stb_image/stb_image.h
     ${CMAKE_SOURCE_DIR}/engine/tools/Filesystem.cpp
     ${CMAKE_SOURCE_DIR}/engine/tools/Filesystem.h
     ${CMAKE_SOURCE_DIR}/engine/window/Window.cpp

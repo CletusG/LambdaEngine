@@ -2,6 +2,7 @@
 #define LAMBDA_SHADER_H
 
 #include "glObject.h"
+#include "math/Vector.h"
 
 namespace Lambda {
 
@@ -16,6 +17,13 @@ namespace Lambda {
         void Use();
 
         void Init(const char* vertexShaderFilepath, const char* fragmentShaderFilepath);
+
+        void SetUniform(const char* name, float x, float y, float z);
+        void SetUniform(const char* name, Math::lVec3f vec3);
+        void SetUniform(const char* name, float x, float y, float z, float w);
+        void SetUniform(const char* name, Math::lVec4f vec4);
+        void SetUniform(const char* name, float x);
+
     private:
         bool CompilationErrorCheck(lglShader shader);
         const char* GetErrorLog(lglShader shader);

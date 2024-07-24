@@ -9,7 +9,7 @@ namespace Lambda {
         Logger::IntlMSG("=======================");
         Logger::IntlMSG("Starting");
         
-        m_lWindow = new lWindow("Lambda Window", 800, 600);
+        m_lWindow = new lWindow("Lambda Window", 800, 800);
         m_lInputManager = new lInputManager(*m_lWindow); 
     }
     
@@ -21,6 +21,8 @@ namespace Lambda {
     void lApplication::Run() {
         Start();
 
+        lTexture l_texture("tests/DemoApplication/assets/grass.jpg");
+
         l2DRenderer l_2DRenderer;
 
         while (!glfwWindowShouldClose(m_lWindow->GetWindow())) {
@@ -30,8 +32,12 @@ namespace Lambda {
             }
 
             l_2DRenderer.ClearColor();
+            
             // Render
             //l_2DRenderer.DrawTriangle();
+            // Bind textures before draw command
+            l_texture.Bind();
+
             l_2DRenderer.DrawSquare();
             
             m_lWindow->Run();

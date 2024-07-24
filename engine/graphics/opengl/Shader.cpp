@@ -68,6 +68,41 @@ namespace Lambda {
         glDeleteShader(m_glFragmentShader);
     }
 
+    void lShader::SetUniform(const char* name, float x, float y, float z) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform3f(l_uniformlocation, x, y, z);
+    }
+
+    void lShader::SetUniform(const char *name, Math::lVec3f vec3) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform3f(l_uniformlocation, vec3.x, vec3.y, vec3.z);
+    }
+
+    void lShader::SetUniform(const char *name, float x, float y, float z, float w) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform4f(l_uniformlocation, x, y, z, w);
+    }
+
+    void lShader::SetUniform(const char *name, Math::lVec4f vec4) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform4f(l_uniformlocation, vec4.x, vec4.y, vec4.z, vec4.w);
+    }
+
+    void lShader::SetUniform(const char *name, float x) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform1f(l_uniformlocation, x); 
+    }
+
     bool lShader::CompilationErrorCheck(lglShader shader) {
         int l_status;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &l_status);
