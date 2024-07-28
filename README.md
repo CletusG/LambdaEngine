@@ -1,7 +1,7 @@
 
 # Lambda-Engine
 
-Lambda-engine is a solo game engine project I am designing mostly for fun and also to learn more about programming. Lambda-engine is currently only being developed on and for Linux, however I plan to expand to other operating systems. I also plan to make an editor.
+Lambda-engine is a solo game engine project I am designing mostly for fun and also to learn more about programming. Lambda-engine is currently only being developed on and for Linux, however I plan to expand to other operating systems eventually.
 
 
 
