@@ -47,7 +47,7 @@ namespace Lambda {
             
             glGenerateMipmap(GL_TEXTURE_2D);
         } else {
-            Logger::IntlERROR("Failed to load texture!");
+            Logger::IntlError("Failed to load texture!");
         }
 
         // Clean up l_texdata memory

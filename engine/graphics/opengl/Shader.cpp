@@ -35,8 +35,8 @@ namespace Lambda {
         glCompileShader(m_glVertexShader);
         
         if (!CompilationErrorCheck(m_glVertexShader)) {
-            Logger::IntlERROR("Failed to load vertex shader!");
-            Logger::IntlERROR(GetErrorLog(m_glVertexShader));
+            Logger::IntlError("Failed to load vertex shader!");
+            Logger::IntlError(GetErrorLog(m_glVertexShader));
         }
 
 
@@ -51,8 +51,8 @@ namespace Lambda {
         glCompileShader(m_glFragmentShader);
         
         if (!CompilationErrorCheck(m_glFragmentShader)) {
-            Logger::IntlERROR("Failed to load fragment shader!");
-            Logger::IntlERROR(GetErrorLog(m_glFragmentShader));
+            Logger::IntlError("Failed to load fragment shader!");
+            Logger::IntlError(GetErrorLog(m_glFragmentShader));
         }
 
 

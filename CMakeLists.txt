@@ -26,9 +26,10 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/input/mousecodes.h
     ${CMAKE_SOURCE_DIR}/engine/main/main.h
     ${CMAKE_SOURCE_DIR}/engine/math/Vector.h
+    ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.cpp
+    ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.h
     ${CMAKE_SOURCE_DIR}/engine/renderer/2D/2DRenderer.cpp
     ${CMAKE_SOURCE_DIR}/engine/renderer/2D/2DRenderer.h
-    ${CMAKE_SOURCE_DIR}/engine/tools/Logger.cpp
     ${CMAKE_SOURCE_DIR}/engine/tools/Logger.h
     ${CMAKE_SOURCE_DIR}/engine/shaders/vertex.vs
     ${CMAKE_SOURCE_DIR}/engine/shaders/fragment.fs
@@ -51,10 +52,6 @@ target_link_libraries(lambda-engine glfw)
 # Pre-compiled header
 target_precompile_headers(lambda-engine INTERFACE ${CMAKE_SOURCE_DIR}/engine/pch.h)
 
-# Macro definition
-add_compile_definitions(LAMBDA_PLATFORM_LINUX)
-
-
 
 ### Set up a demo application (will be removed/moved) ###
 project(DemoApplication)
@@ -70,5 +67,9 @@ include_directories(
 # Linker
 target_link_libraries(DemoApplication lambda-engine)
 
-# Macro definitions
+# Preprocessor definitions
 target_compile_definitions(DemoApplication PUBLIC LAMBDA_APP)
+
+
+# Preprocessor definitions (for all projects)
+add_compile_definitions(LAMBDA_PLATFORM_LINUX)

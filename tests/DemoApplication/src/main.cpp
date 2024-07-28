@@ -8,8 +8,8 @@ class Demo : public lApplication {
         ~Demo() {};
 
         void Start() override {
-            Logger::MSG("Starting up");
-            Logger::WARN("Sector C science personnel, report to Anomalous Materials test laboratory.");
+            Logger::Message("Starting up");
+            Logger::Warn("Sector C science personnel, report to Anomalous Materials test laboratory.");
         }
 
         void Update() override {}

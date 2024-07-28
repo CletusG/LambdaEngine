@@ -1,34 +1,87 @@
 #ifndef LAMBDA_LOGGER_H
 #define LAMBDA_LOGGER_H
 
-/*Logger will eventually turn into a full console app*/
+#include "platform/linux/UNXColors.h"
 
-#include <string>
+/* Logger is a very simple debug tool for 
+   printing values to the lambda debug console*/
 
 namespace Lambda {
     namespace Logger {        
 
-#ifndef LAMBDA_APP
-        void IntlMSG(const char* msg);
-        void IntlERROR(const char* msg);
-        void IntlWARN(const char* msg);
+        // Internal (Engine) logging functions
+        #ifndef LAMBDA_APP
+            // Message 
+            template <typename T>
+            void IntlMessage(T msg) {
+                std::cout << "Engine: " << msg << '\n';
+            }
+            template <typename T, typename... Args>
+            void IntlMessage(T t, Args... args) {
+                IntlMessage(args...);
+            }   
+            // Warn
+            template <typename T>
+            void IntlWarn(T msg) {
+                std::ostringstream oss;
+                oss << "Engine: " << msg;
+                std::cout << UNXColorString::YELLOW(oss.str()) << '\n'; 
+            }
+            template <typename T, typename... Args>
+            void IntlWarn(T t, Args... args) {
+                IntlWarn(args...);
+            }   
+            // Error
+            template <typename T>
+            void IntlError(T msg) {
+                std::ostringstream oss;
+                oss << "Engine: " << msg;
+                std::cout << UNXColorString::RED(oss.str()) << '\n'; 
+            }
+            template <typename T, typename... Args>
+            void IntlError(T t, Args... args) {
+                IntlError(args...);
+            }        
+        
+        // Client (Application) logging functions
+        #else
+            // Message
+            template <typename T>
+            void Message(T msg) {
+                std::cout << "Application: " << msg << '\n';
+            }
+            template <typename T, typename... Args>
+            void Message(T t, Args... args) {
+                Message(args...);
+            }
+            
+            // Warn
+            template <typename T>
+            void Warn(T msg) {
+                std::ostringstream oss;
+                oss << "Application: " << msg;
+                std::cout << UNXColorString::YELLOW(oss.str()) << '\n'; 
+            }
+            template <typename T, typename... Args>
+            void Warn(T t, Args... args) {
+                Warn(args...);
+            }
 
-        void IntlMSG(std::string& msg);
-        void IntlError(std::string& msg);
-        void IntlWARN(std::string& msg);
-#endif
-        void MSG(const char* msg);
-        void ERROR(const char* msg);
-        void WARN(const char* msg);
-    }
+            // Error
+            template <typename T>
+            void Error(T msg) {
+                std::ostringstream oss;
+                oss << "Application: " << msg;
+                std::cout << UNXColorString::RED(oss.str()) << '\n'; 
+            }
+            template <typename T, typename... Args>
+            void Error(T t, Args... args) {
+                Error(args...);
+            } 
+            
+        #endif
 
-#ifdef LAMBDA_PLATFORM_LINUX
-    namespace UNXColorString {
-        std::string GREEN(const std::string& msg);
-        std::string RED(const std::string& msg);
-        std::string YELLOW(const std::string& msg);
     }
 }
-#endif
 
 #endif

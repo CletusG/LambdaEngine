@@ -13,7 +13,7 @@ namespace Lambda {
         glfwMakeContextCurrent(m_Window);
 
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-          Logger::IntlERROR("Failed to initialize GLAD!");
+          Logger::IntlError("Failed to initialize GLAD!");
         }
 
         glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
