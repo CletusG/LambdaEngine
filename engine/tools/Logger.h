@@ -3,12 +3,15 @@
 
 #include "platform/linux/UNXColors.h"
 
+// I know this logger is completely broken but it works well enough for now so 
+// I'm going to fix it later
+
 /* Logger is a very simple debug tool for 
    printing values to the lambda debug console*/
 
 namespace Lambda {
     namespace Logger {        
-
+        
         // Internal (Engine) logging functions
         #ifndef LAMBDA_APP
             // Message 

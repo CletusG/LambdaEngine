@@ -9,6 +9,10 @@ add_library(lambda-engine STATIC
     
     ${CMAKE_SOURCE_DIR}/engine/application/Application.cpp
     ${CMAKE_SOURCE_DIR}/engine/application/Application.h
+    ${CMAKE_SOURCE_DIR}/engine/gameworld/Scene.h
+    ${CMAKE_SOURCE_DIR}/engine/gameworld/components.h
+    ${CMAKE_SOURCE_DIR}/engine/gameworld/EntityRegister.cpp
+    ${CMAKE_SOURCE_DIR}/engine/gameworld/EntityRegister.h
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/ElementBuffer.cpp
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/ElementBuffer.h
     ${CMAKE_SOURCE_DIR}/engine/graphics/opengl/glObject.h
@@ -25,7 +29,7 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/input/keycodes.h
     ${CMAKE_SOURCE_DIR}/engine/input/mousecodes.h
     ${CMAKE_SOURCE_DIR}/engine/main/main.h
-    ${CMAKE_SOURCE_DIR}/engine/math/Vector.h
+    ${CMAKE_SOURCE_DIR}/engine/math/vector.h
     ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.cpp
     ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.h
     ${CMAKE_SOURCE_DIR}/engine/renderer/2D/2DRenderer.cpp
@@ -39,7 +43,7 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/tools/Filesystem.h
     ${CMAKE_SOURCE_DIR}/engine/window/Window.cpp
     ${CMAKE_SOURCE_DIR}/engine/window/Window.h
-    ${CMAKE_SOURCE_DIR}/engine/Lambda.h    )
+    ${CMAKE_SOURCE_DIR}/engine/lambda.h    )
 
 # Include
 include_directories(

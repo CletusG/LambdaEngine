@@ -2,7 +2,7 @@
 #define LAMBDA_SHADER_H
 
 #include "glObject.h"
-#include "math/Vector.h"
+#include "math/vector.h"
 
 namespace Lambda {
 

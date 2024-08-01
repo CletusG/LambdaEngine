@@ -7,5 +7,6 @@
 #include "application/Application.h"
 #include "main/main.h"
 
+#include "gameworld/Scene.h"
 
 #endif
