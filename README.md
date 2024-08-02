@@ -31,6 +31,7 @@ Here are some great resources I've used to learn more about writing game engines
  - [LearnOpenGL by Joey de Vries](https://learnopengl.com/About)
  - [TheCherno (Yan Chernikov) on YouTube](https://www.youtube.com/@TheCherno/playlists)
  - [C++ Game Development 2 by Suraj Sharma on YouTube](https://www.youtube.com/watch?v=3pLmPXzb31s&list=PL6xSOsbVA1eY06RyJuIVWc6tP8hIDiId8)
+ - [Game Programming Patterns by Robert Nystrom](https://gameprogrammingpatterns.com/)
 
 Other Engines:
  - [Hazel](https://github.com/TheCherno/Hazel)
