@@ -3,9 +3,6 @@
 
 #include "tools/Filesystem.h"
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-
 namespace Lambda {
 
     lShader::~lShader() {

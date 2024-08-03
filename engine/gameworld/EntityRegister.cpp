@@ -10,10 +10,10 @@ namespace Lambda {
 
     // Temporary for debugging
     lEntity::~lEntity() {
-        Logger::IntlWarn("lEntity Destroyed");
+        Logger::IntlWarn("Entity Destroyed");
     }
     lEntity::lEntity(const lEntity &entity) {
-        Logger::IntlWarn("lEntity Copied");
+        Logger::IntlWarn("Entity Copied");
     }
 
 

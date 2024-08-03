@@ -1,5 +1,7 @@
-#ifndef LAMBDA_MAIN_H
-#define LAMBDA_MAIN_H
+#ifndef LAMBDA_CLIENT_H
+#define LAMBDA_CLIENT_H
+
+// To be included in a client application (in lambda.h)
 
 extern Lambda::lApplication* Lambda::CreatelApplication();
 

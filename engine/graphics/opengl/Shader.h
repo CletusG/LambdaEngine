@@ -6,7 +6,7 @@
 
 namespace Lambda {
 
-    typedef unsigned int lglShader;
+    using lglShader = unsigned int;
 
     // OpenGL Shader program
     class lShader : public lglObject {
@@ -28,7 +28,7 @@ namespace Lambda {
         bool CompilationErrorCheck(lglShader shader);
         const char* GetErrorLog(lglShader shader);
 
-        unsigned int m_glVertexShader, m_glFragmentShader;
+        lglShader m_glVertexShader, m_glFragmentShader;
     };
 }
 

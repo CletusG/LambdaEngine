@@ -1,4 +1,4 @@
-#include "lambda.h"
+#include "client/lambda.h"
 
 using namespace Lambda;
 
@@ -12,12 +12,10 @@ class Demo : public lApplication {
             Logger::Warn("Sector C science personnel, report to Anomalous Materials test laboratory.");
 
             auto& entities = m_Scene1.GetEntityRegister();
-            entities.NewEntity("Player"); // m_ID = 0
-            entities.NewEntity("Camera"); // m_ID = 1
-            entities.NewEntity("Enemy"); // m_ID = 2
-            entities.NewEntity("Test Entity"); // m_ID = 3
-
-            entities.DeleteEntity(3); // Valid
+            entities.NewEntity("Player"); // 
+            entities.NewEntity("Camera"); // m_ID = 0, t = 0
+            entities.NewEntity("Enemy"); // m_ID = 1, t =1
+            entities.NewEntity("Test Entity"); // m_ID = 2, t = 2
 
             // Print Entities
             for (auto& e : m_Scene1.GetEntityRegister().Get()) {

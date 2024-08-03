@@ -1,7 +1,7 @@
 #ifndef LAMBDA_MOUSECODES_H
 #define LAMBDA_MOUSECODES_H
 
-typedef int lButton;
+using lButton = int;
 
 // Renamed GLFW mouse codes
 #define LMOUSE_BUTTON_1         0

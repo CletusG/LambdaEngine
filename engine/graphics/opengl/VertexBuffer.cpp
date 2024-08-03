@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "VertexBuffer.h"
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-
 namespace Lambda {
     
     lVertexBuffer::lVertexBuffer() {

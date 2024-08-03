@@ -4,9 +4,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "thirdparty/stb_image/stb_image.h"
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-
 /* Note: I'm not really sure exactly how I want to implement this class yet,
    this is kind of just a rough draft
 */

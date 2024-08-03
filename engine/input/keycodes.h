@@ -1,7 +1,7 @@
 #ifndef LAMBDA_KEYCODES_H
 #define LAMBDA_KEYCODES_H
 
-typedef int lKey;
+using lKey = int;
 
 // Renamed GLFW keycodes
 #define LKEY_SPACE              32

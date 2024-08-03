@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "ElementBuffer.h"
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-
 namespace Lambda {
     
     lElementBuffer::lElementBuffer() {

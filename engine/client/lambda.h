@@ -5,7 +5,7 @@
 #include "tools/Filesystem.h"
 
 #include "application/Application.h"
-#include "main/main.h"
+#include "client/client.h"
 
 #include "gameworld/Scene.h"
 

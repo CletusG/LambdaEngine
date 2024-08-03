@@ -9,6 +9,8 @@ add_library(lambda-engine STATIC
     
     ${CMAKE_SOURCE_DIR}/engine/application/Application.cpp
     ${CMAKE_SOURCE_DIR}/engine/application/Application.h
+    ${CMAKE_SOURCE_DIR}/engine/client/client.h
+    ${CMAKE_SOURCE_DIR}/engine/client/lambda.h
     ${CMAKE_SOURCE_DIR}/engine/gameworld/Scene.h
     ${CMAKE_SOURCE_DIR}/engine/gameworld/components.h
     ${CMAKE_SOURCE_DIR}/engine/gameworld/EntityRegister.cpp
@@ -28,7 +30,6 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/input/InputManager.h
     ${CMAKE_SOURCE_DIR}/engine/input/keycodes.h
     ${CMAKE_SOURCE_DIR}/engine/input/mousecodes.h
-    ${CMAKE_SOURCE_DIR}/engine/main/main.h
     ${CMAKE_SOURCE_DIR}/engine/math/vector.h
     ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.cpp
     ${CMAKE_SOURCE_DIR}/engine/platform/linux/UNXColors.h
@@ -42,8 +43,7 @@ add_library(lambda-engine STATIC
     ${CMAKE_SOURCE_DIR}/engine/tools/Filesystem.cpp
     ${CMAKE_SOURCE_DIR}/engine/tools/Filesystem.h
     ${CMAKE_SOURCE_DIR}/engine/window/Window.cpp
-    ${CMAKE_SOURCE_DIR}/engine/window/Window.h
-    ${CMAKE_SOURCE_DIR}/engine/lambda.h    )
+    ${CMAKE_SOURCE_DIR}/engine/window/Window.h    )
 
 # Include
 include_directories(
@@ -66,7 +66,8 @@ add_executable(DemoApplication
 
 # Include
 include_directories(
-    "${CMAKE_SOURCE_DIR}/engine")
+    "${CMAKE_SOURCE_DIR}/engine"
+    "${CMAKE_SOURCE_DIR}/client")
 
 # Linker
 target_link_libraries(DemoApplication lambda-engine)
