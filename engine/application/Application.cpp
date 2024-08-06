@@ -21,9 +21,9 @@ namespace Lambda {
     void lApplication::Run() {
         Start();
 
-        lTexture l_texture("tests/DemoApplication/assets/grass.jpg");
-
         l2DRenderer l_2DRenderer;
+
+        float lerp = 0.0f;
 
         while (!glfwWindowShouldClose(m_lWindow->GetWindow())) {
             
@@ -32,11 +32,13 @@ namespace Lambda {
             }
 
             l_2DRenderer.ClearColor();
-            
-            // Render
-            //l_2DRenderer.DrawTriangle();
-            // Bind textures before draw command
-            l_texture.Bind();
+
+            if (m_lInputManager->GetKeyPressed(LKEY_E)) {
+                l_2DRenderer.GetShader()->SetUniform("lerp", lerp += 0.005);
+            }
+            if (m_lInputManager->GetKeyPressed(LKEY_Q)) {
+                l_2DRenderer.GetShader()->SetUniform("lerp", lerp -= 0.005);
+            }
 
             l_2DRenderer.DrawSquare();
             

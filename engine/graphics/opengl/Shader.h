@@ -23,6 +23,7 @@ namespace Lambda {
         void SetUniform(const char* name, float x, float y, float z, float w);
         void SetUniform(const char* name, Math::lVec4f vec4);
         void SetUniform(const char* name, float x);
+        void SetUniform(const char* name, int i);
 
     private:
         bool CompilationErrorCheck(lglShader shader);

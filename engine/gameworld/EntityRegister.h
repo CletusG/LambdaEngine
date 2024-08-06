@@ -10,7 +10,7 @@ namespace Lambda {
         lEntity(unsigned int size, const char* name);
         lEntity(unsigned int size);
         ~lEntity();
-        lEntity (const lEntity &entity);
+        lEntity (const lEntity &entity) = delete;
 
         unsigned int m_ID;
         std::string m_Name = "Entity";

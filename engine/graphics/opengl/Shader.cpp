@@ -100,6 +100,13 @@ namespace Lambda {
         glUniform1f(l_uniformlocation, x); 
     }
 
+    void lShader::SetUniform(const char *name, int i) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniform1i(l_uniformlocation, i);
+    }
+
     bool lShader::CompilationErrorCheck(lglShader shader) {
         int l_status;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &l_status);
@@ -107,15 +114,15 @@ namespace Lambda {
         // If compilation failed
         if (!l_status) {
             return false;   
-        } else {
-            return true;
         }
+
+        return true;
     }
 
     const char* lShader::GetErrorLog(lglShader shader) {
         char* l_infoLog;
         glGetShaderInfoLog(shader, 512, NULL, l_infoLog);
         
-        return l_infoLog; // Don't return a local var, I will fix this
+        return l_infoLog;
     }
 }

@@ -12,9 +12,6 @@ namespace Lambda {
     lEntity::~lEntity() {
         Logger::IntlWarn("Entity Destroyed");
     }
-    lEntity::lEntity(const lEntity &entity) {
-        Logger::IntlWarn("Entity Copied");
-    }
 
 
     // Register

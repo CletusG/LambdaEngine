@@ -33,8 +33,12 @@ namespace Lambda {
         l_glElementBuffer.Bind();
         l_glElementBuffer.CopyData();
 
-        SetVertexAttribute(0, 3, 5 * sizeof(float), 0);
-        SetVertexAttribute(1, 2, 5 * sizeof(float), 3 * sizeof(float));
+        SetVertexAttribute(0, 3, 8 * sizeof(float), 0); // Position
+        SetVertexAttribute(1, 2, 8 * sizeof(float), 3 * sizeof(float)); // Texture
+        SetVertexAttribute(2, 3, 8 * sizeof(float), 5 * sizeof(float)); // Each corners texture
+
+        m_glShaders->SetUniform("fstexture1", 0);
+        m_glShaders->SetUniform("fstexture2", 1);
 
         m_glVertexArray->Unbind();
         l_glVertexBuffer.Unbind();
@@ -56,6 +60,14 @@ namespace Lambda {
     }
 
     void l2DRenderer::DrawSquare() {
+        
+        // bind and configure textures/texture units
+        glActiveTexture(GL_TEXTURE0);
+        m_Texture1->Bind();
+        
+        glActiveTexture(GL_TEXTURE1);
+        m_Texture2->Bind();
+
         m_glShaders->Use();
         m_glVertexArray->Bind();
 
