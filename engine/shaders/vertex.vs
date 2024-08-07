@@ -11,10 +11,12 @@ out vec2 fstexcoords;
 //out vec4 fscolor;
 //out vec4 fscornercolors;
 
+uniform mat4 transform;
+
 void main()
 {
     // Shader output, predefined gl_Position
-    gl_Position = vec4(vpos.x, vpos.y, vpos.z, 1.0);
+    gl_Position = vec4(vpos, 1.0) * transform;
     fstexcoords = vtexcoords;
     //fscolor = vec4(1.0f, 0.0f, 0.0f, 1.0f);
     //fscornercolors = vec4(vcornercolors, 1.0f);

@@ -32,8 +32,8 @@ namespace Lambda {
         lShader* m_glShaders;
         lVertexArray* m_glVertexArray;
         
-        std::unique_ptr<lTexture> m_Texture1 = std::make_unique<lTexture>("tests/DemoApplication/assets/grass.jpg");
-        std::unique_ptr<lTexture> m_Texture2 = std::make_unique<lTexture>("tests/DemoApplication/assets/coal.jpg");
+        std::unique_ptr<lTexture> m_Texture1 = std::make_unique<lTexture>("tests/DemoApplication/assets/grass.jpg", IMG_JPG);
+        std::unique_ptr<lTexture> m_Texture2 = std::make_unique<lTexture>("tests/DemoApplication/assets/lambda.png", IMG_PNG);
 
         void SetVertexAttribute(unsigned int location, unsigned int size, 
             unsigned long stride, unsigned long offset);

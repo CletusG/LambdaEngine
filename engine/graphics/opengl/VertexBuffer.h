@@ -25,11 +25,11 @@ namespace Lambda {
         };
 
         // Demo square vertices
-        float m_SquareVertices[32] = {
-            0.5, 0.5f, 0.0f,     1.0f, 1.0f,    1.0f, 0.0f, 0.0f,
-            0.5f, -0.5f, 0.0f,    1.0f, 0.0f,   0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,   0.0f, 0.0f, 1.0f,
-            -0.5f, 0.5f, 0.0f,     0.0f, 1.0f,   1.0f, 1.0f, 1.0f
+        float m_SquareVertices[20] = {
+            0.5, 0.5f, 0.0f,     1.0f, 1.0f, 
+            0.5f, -0.5f, 0.0f,    1.0f, 0.0f,
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f,
+            -0.5f, 0.5f, 0.0f,     0.0f, 1.0f
         };
 
     };

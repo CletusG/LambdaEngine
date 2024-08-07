@@ -3,6 +3,8 @@
 
 #include "renderer/2D/2DRenderer.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+
 namespace Lambda {
     
     lApplication::lApplication() {
@@ -39,6 +41,17 @@ namespace Lambda {
             if (m_lInputManager->GetKeyPressed(LKEY_Q)) {
                 l_2DRenderer.GetShader()->SetUniform("lerp", lerp -= 0.005);
             }
+
+            // Set transform
+            glm::mat4 transform = glm::mat4(1.0f); // identity matrix
+            // Angle 90 degrees
+            transform = glm::scale(transform, glm::vec3(0.5, 0.5, 0.5));
+            transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0, 0.0, 1.0));
+            l_2DRenderer.GetShader()->SetUniform("transform", transform);
+
+            l_2DRenderer.GetShader()->SetUniform("lerp", (float)sin(glfwGetTime()));
+
+            //Logger::IntlMessage((float)glfwGetTime());
 
             l_2DRenderer.DrawSquare();
             

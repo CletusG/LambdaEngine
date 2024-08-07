@@ -7,6 +7,7 @@
 #include "graphics/opengl/VertexBuffer.h"
 #include "graphics/opengl/ElementBuffer.h"
 
+
 namespace Lambda {
     
     l2DRenderer::l2DRenderer()
@@ -33,12 +34,15 @@ namespace Lambda {
         l_glElementBuffer.Bind();
         l_glElementBuffer.CopyData();
 
-        SetVertexAttribute(0, 3, 8 * sizeof(float), 0); // Position
-        SetVertexAttribute(1, 2, 8 * sizeof(float), 3 * sizeof(float)); // Texture
-        SetVertexAttribute(2, 3, 8 * sizeof(float), 5 * sizeof(float)); // Each corners texture
+        SetVertexAttribute(0, 3, 5 * sizeof(float), 0); // Position
+        SetVertexAttribute(1, 2, 5 * sizeof(float), 3 * sizeof(float)); // Texture
+        //SetVertexAttribute(2, 3, 8 * sizeof(float), 5 * sizeof(float)); // Each corners texture
 
+        // Set texture units
         m_glShaders->SetUniform("fstexture1", 0);
         m_glShaders->SetUniform("fstexture2", 1);
+
+        
 
         m_glVertexArray->Unbind();
         l_glVertexBuffer.Unbind();

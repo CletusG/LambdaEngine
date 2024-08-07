@@ -10,7 +10,7 @@
 
 namespace Lambda {
     
-    lTexture::lTexture(const char* texturepath) {
+    lTexture::lTexture(const char* texturepath, lImageType type) {
        glGenTextures(1, &m_ID);
 
         // Load texture image
@@ -33,14 +33,30 @@ namespace Lambda {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+        // If the texture loaded
         if (l_texdata) {
-            glTexImage2D(GL_TEXTURE_2D, 
-                0,                      // using opengl generated mipmaps
-                GL_RGB, 
-                l_width, l_height,
-                0,
-                GL_RGB, GL_UNSIGNED_BYTE,
-                l_texdata);
+
+            switch(type)
+            {
+                case IMG_PNG:
+                    glTexImage2D(GL_TEXTURE_2D, 
+                        0,                      // using opengl generated mipmaps
+                        GL_RGBA, 
+                        l_width, l_height,
+                        0,
+                        GL_RGBA, GL_UNSIGNED_BYTE,
+                        l_texdata);
+                        break;
+                case IMG_JPG:
+                    glTexImage2D(GL_TEXTURE_2D, 
+                        0,                      // using opengl generated mipmaps
+                        GL_RGB, 
+                        l_width, l_height,
+                        0,
+                        GL_RGB, GL_UNSIGNED_BYTE,
+                        l_texdata);
+                        break;
+            }
             
             glGenerateMipmap(GL_TEXTURE_2D);
         } else {

@@ -3,6 +3,9 @@
 
 #include "tools/Filesystem.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+
 namespace Lambda {
 
     lShader::~lShader() {
@@ -72,7 +75,7 @@ namespace Lambda {
         glUniform3f(l_uniformlocation, x, y, z);
     }
 
-    void lShader::SetUniform(const char *name, Math::lVec3f vec3) {
+    void lShader::SetUniform(const char *name, glm::vec3 vec3) {
         int l_uniformlocation = glGetUniformLocation(m_ID, name);
         Use(); // Required before calling glUniform
         
@@ -86,7 +89,7 @@ namespace Lambda {
         glUniform4f(l_uniformlocation, x, y, z, w);
     }
 
-    void lShader::SetUniform(const char *name, Math::lVec4f vec4) {
+    void lShader::SetUniform(const char *name, glm::vec4 vec4) {
         int l_uniformlocation = glGetUniformLocation(m_ID, name);
         Use(); // Required before calling glUniform
         
@@ -105,6 +108,13 @@ namespace Lambda {
         Use(); // Required before calling glUniform
         
         glUniform1i(l_uniformlocation, i);
+    }
+
+    void lShader::SetUniform(const char *name, glm::mat4 m) {
+        int l_uniformlocation = glGetUniformLocation(m_ID, name);
+        Use(); // Required before calling glUniform
+        
+        glUniformMatrix4fv(l_uniformlocation, 1, GL_FALSE, glm::value_ptr(m));
     }
 
     bool lShader::CompilationErrorCheck(lglShader shader) {

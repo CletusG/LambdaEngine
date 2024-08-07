@@ -18,5 +18,5 @@ void main()
     fragcolor = mix(
                 texture(fstexture1, fstexcoords),
                 texture(fstexture2, fstexcoords),
-                lerp); // lerp value, 80% first 20% second texture
+                lerp);
 }

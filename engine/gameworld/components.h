@@ -1,7 +1,7 @@
 #ifndef LAMBDA_COMPONENTS_H
 #define LAMBDA_COMPONENTS_H
 
-#include "math/vector.h"
+#include "glm/glm.hpp"
 
 // These will need component registers
 // which should be maps that include the transform component
@@ -13,9 +13,9 @@ namespace Lambda {
         lTransform() = default;
         ~lTransform() = default;
 
-        Math::lVec3f position;
-        Math::lVec3f rotation;
-        Math::lVec3f scale;
+        glm::vec3 position;
+        glm::vec3 rotation;
+        glm::vec3 scale;
     };
 
     struct lInputController {
